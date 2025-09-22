@@ -37,5 +37,17 @@ namespace ToolsListApp.Managers
             }
             Console.WriteLine("---");
         }
+        public void AddTask(string description)
+        {
+            if (!string.IsNullOrWhiteSpace(description))
+            {
+                _todolist.Add(new TodoItem(_nextId++, description));
+                Console.WriteLine("Task added successfully!");
+            }
+            else
+            {
+                Console.WriteLine("Task description cannot be empty.");
+            }
+        }
     }
 }
